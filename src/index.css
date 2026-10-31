@@ -31,29 +31,3 @@
 .certification-action{display:block;margin-top:24px;color:var(--red);font-size:12px;line-height:1.4;text-decoration:underline;text-underline-offset:4px}
 @media(max-width:767px){.certifications{gap:14px}.certifications>div{margin-bottom:6px}.certifications>a{padding:22px 20px}.certifications strong{font-size:21px}.certification-action{margin-top:18px}}
 @media(prefers-reduced-motion:reduce){.certifications>a:hover,.certifications>a:focus-visible{transform:none}}
-
-/* Selected websites: complete demos hosted within this portfolio. */
-.selected-work-section{background:var(--paper)}
-.selected-work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,540px),1fr));gap:58px 30px}
-.selected-work-card{display:block;min-width:0}
-.selected-work-preview{height:clamp(340px,40vw,520px);position:relative;overflow:hidden;background:#e5e7db;border:1px solid #1d1d1a14;isolation:isolate}
-.work-preview-top{position:absolute;inset:26px 30px auto;z-index:2;display:flex;justify-content:space-between;align-items:center;color:#344333;gap:20px}
-.work-preview-top>span:first-child{font-size:28px;line-height:1;font-weight:600;letter-spacing:-.07em}
-.work-preview-top>span:last-child{font-size:8px;letter-spacing:.14em;text-align:right}
-.work-preview-gallery{position:absolute;inset:84px 0 45px;display:flex;align-items:center;justify-content:center;gap:26px;pointer-events:none}
-.work-preview-gallery img{width:21%;height:100%;object-fit:cover;border-radius:9px;box-shadow:0 15px 40px #2531211c;transform:translateY(18px) rotate(var(--preview-rotation));transition:transform .65s cubic-bezier(.2,.65,.3,1)}
-.work-preview-gallery img:nth-child(1){--preview-rotation:-9deg}
-.work-preview-gallery img:nth-child(2){--preview-rotation:2deg;transform:translateY(-8px) rotate(var(--preview-rotation))}
-.work-preview-gallery img:nth-child(3){--preview-rotation:10deg}
-.work-preview-caption{position:absolute;bottom:20px;left:30px;font-size:10px;letter-spacing:.03em;color:#52604c}
-.work-preview-open{position:absolute;bottom:20px;right:26px;z-index:3;padding:10px 16px;border:1px solid #35453555;background:#f9faf2e8;backdrop-filter:blur(8px);border-radius:30px;color:#344333;font-size:12px;transition:background .2s,color .2s}
-.selected-work-card:hover .work-preview-gallery img,.selected-work-card:focus-visible .work-preview-gallery img{transform:translateY(0) rotate(0deg)}
-.selected-work-card:hover .work-preview-open,.selected-work-card:focus-visible .work-preview-open{background:#344333;color:white}
-.selected-work-details{display:flex;justify-content:space-between;gap:30px;margin-top:24px}
-.work-project-index{font-size:10px;color:#616158;letter-spacing:.04em}
-.selected-work-details h3{margin:10px 0 12px;font-size:42px;font-weight:400;letter-spacing:-.045em;line-height:1}
-.selected-work-details p{max-width:460px;margin:0;font-size:16px;line-height:1.6;color:#616158}
-.selected-work-tags{display:flex;flex-wrap:wrap;justify-content:flex-end;align-content:flex-start;gap:7px;padding-top:4px}
-.selected-work-tags span{display:block;border:1px solid #1d1d1a26;border-radius:30px;padding:7px 12px;font-size:10px;white-space:nowrap}
-@media(max-width:767px){.selected-work-preview{height:340px}.work-preview-top{inset:22px 20px auto}.work-preview-top>span:first-child{font-size:25px}.work-preview-top>span:last-child{font-size:6px;max-width:130px;line-height:1.6}.work-preview-gallery{inset:88px -14% 55px;gap:13px}.work-preview-gallery img{width:25%;border-radius:5px}.work-preview-caption{left:20px;bottom:20px;font-size:8px}.work-preview-open{right:15px;bottom:14px;font-size:10px;padding:9px 12px}.selected-work-details{display:block;margin-top:20px}.selected-work-details h3{font-size:34px}.selected-work-details p{font-size:14px}.selected-work-tags{justify-content:flex-start;margin-top:18px;padding:0}.selected-work-grid{gap:40px}}
-@media(prefers-reduced-motion:reduce){.selected-work-card:hover .work-preview-gallery img,.selected-work-card:focus-visible .work-preview-gallery img{transform:translateY(18px) rotate(var(--preview-rotation))}.selected-work-card:hover .work-preview-gallery img:nth-child(2),.selected-work-card:focus-visible .work-preview-gallery img:nth-child(2){transform:translateY(-8px) rotate(var(--preview-rotation))}}

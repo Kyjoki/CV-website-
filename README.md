@@ -45,9 +45,3 @@ The two Helvetica stylesheet links are in `index.html`. They require internet ac
 ## Update the CV
 
 Replace `public/maksim-tsoy-cv.pdf`, then update the version query in `CV_URL` and the About CV link in `src/App.tsx` to avoid serving a cached older file.
-
-## Selected websites
-
-OBJECT is hosted inside this portfolio at `/projects/object/index.html`. Its card appears in the Projects section. All images and fonts are local; its original moving gallery, catalogue, filters, product details and browser-only cart are preserved. A return link leads back to the portfolio. Contacts and prices remain demonstration data from the supplied site.
-
-To add another landing page, place its HTML and assets in `public/projects/<slug>/` and add a project entry to `src/components/SelectedWork.tsx`. No separate deployment or domain is needed for static sites.

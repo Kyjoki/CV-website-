@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-const links = [['Projects', '#projects'], ['Experience', '#experience'], ['Highlights', '#achievements'], ['About', '#about']] as const;
+const links = [['Experience', '#experience'], ['Highlights', '#achievements'], ['About', '#about']] as const;
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
