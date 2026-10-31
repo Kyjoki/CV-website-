@@ -31,3 +31,24 @@
 .certification-action{display:block;margin-top:24px;color:var(--red);font-size:12px;line-height:1.4;text-decoration:underline;text-underline-offset:4px}
 @media(max-width:767px){.certifications{gap:14px}.certifications>div{margin-bottom:6px}.certifications>a{padding:22px 20px}.certifications strong{font-size:21px}.certification-action{margin-top:18px}}
 @media(prefers-reduced-motion:reduce){.certifications>a:hover,.certifications>a:focus-visible{transform:none}}
+
+/* Keep navigation usable when iPhone browser chrome or landscape reduces height. */
+.mobile-menu{height:100%;height:100dvh;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding-top:max(96px,calc(env(safe-area-inset-top) + 80px));padding-bottom:max(32px,env(safe-area-inset-bottom))}
+.mobile-menu>a{flex-shrink:0;min-height:44px}
+@media(max-width:767px){
+  .hamburger{min-width:44px;min-height:44px;padding:10px;align-items:center;justify-content:center;color:inherit}
+  .navbar{padding-right:10px}
+  .navbar-scrolled{padding-right:10px}
+  .contact-links>.copy-wrap{min-width:0;width:100%}
+  .contact-links .pill{min-height:44px;max-width:100%;white-space:normal;text-align:left}
+  .contact-links .pill>span{min-width:0;overflow-wrap:anywhere}
+  .contact-links .pill>svg{flex-shrink:0}
+  .contact-links>a,.hero-bottom-line>a,.text-link,.highlight-card>a,.footer-bottom>a:last-child{display:inline-flex;align-items:center;min-height:44px}
+  .contact-links>a{font-size:14px}
+  .about-facts>div{min-width:0}
+}
+@media(max-width:767px) and (max-height:600px){
+  .mobile-menu{justify-content:flex-start;gap:16px;padding-top:max(88px,calc(env(safe-area-inset-top) + 76px))}
+  .mobile-menu>a{font-size:30px;line-height:1.15}
+  .menu-foot{position:static;margin-top:12px;flex-shrink:0}
+}

@@ -37,10 +37,19 @@ function CopyEmail({ dark = false }: { dark?: boolean }) {
   useEffect(() => () => clearTimeout(timer.current), []);
   const copy = async () => {
     try {
-      if (navigator.clipboard?.writeText) await navigator.clipboard.writeText(EMAIL);
-      else {
-        const field = document.createElement('textarea'); field.value = EMAIL; field.style.cssText = 'position:fixed;left:-9999px;top:0'; document.body.appendChild(field); field.select();
-        const copied = document.execCommand('copy'); field.remove(); if (!copied) throw new Error('Copy unavailable');
+      let copied = false;
+      try {
+        if (navigator.clipboard?.writeText) { await navigator.clipboard.writeText(EMAIL); copied = true; }
+      } catch { /* Safari or an embedded browser may deny the modern clipboard API. */ }
+      if (!copied) {
+        const previousFocus = document.activeElement as HTMLElement | null;
+        const field = document.createElement('textarea');
+        field.value = EMAIL; field.readOnly = true;
+        field.style.cssText = 'position:fixed;left:0;top:0;width:1px;height:1px;padding:0;opacity:0;font-size:16px';
+        document.body.appendChild(field);
+        try { field.focus({ preventScroll: true }); field.select(); field.setSelectionRange(0, EMAIL.length); copied = document.execCommand('copy'); }
+        finally { field.remove(); previousFocus?.focus({ preventScroll: true }); }
+        if (!copied) throw new Error('Copy unavailable');
       }
       setStatus('copied');
     }
